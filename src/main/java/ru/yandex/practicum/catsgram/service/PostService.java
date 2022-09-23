@@ -9,12 +9,12 @@ import ru.yandex.practicum.catsgram.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PostService {
     private final UserService userService;
     private final List<Post> posts = new ArrayList<>();
-
     private static Integer globalId = 0;
 
     @Autowired
@@ -22,8 +22,14 @@ public class PostService {
         this.userService = userService;
     }
 
-    public List<Post> findAll() {
-        return posts;
+    public List<Post> findAll(Integer size, Integer from, String sort) {
+        return posts.stream().sorted((p0, p1) -> {
+            int comp = p0.getCreationDate().compareTo(p1.getCreationDate()); //прямой порядок сортировки
+            if(sort.equals("desc")){
+                comp = -1 * comp; //обратный порядок сортировки
+            }
+            return comp;
+        }).skip(from).limit(size).collect(Collectors.toList());
     }
 
     private static Integer getNextId(){
