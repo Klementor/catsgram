@@ -27,8 +27,8 @@ public class PostController {
         return postService.create(post);
     }
 
-    @GetMapping("/posts/{postId}")
-    public Post findById(@PathVariable Integer postId) {
-        return postService.findPostById(postId);
-    }
+//    @GetMapping("/posts/{postId}")
+//    public Post findById(@PathVariable Integer postId) {
+//        return postService.findPostById(postId);
+//    }
 }

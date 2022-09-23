@@ -43,10 +43,10 @@ public class PostService {
         return post;
     }
 
-    public Post findPostById(Integer postId) {
-        return posts.stream()
-                .filter(p -> p.getId().equals(postId))
-                .findFirst()
-                .orElseThrow(() -> new PostNotFoundException(String.format("Пост № %d не найден", postId)));
-    }
+//    public Post findPostById(Integer postId) {
+//        return posts.stream()
+//                .filter(p -> p.getId().equals(postId))
+//                .findFirst()
+//                .orElseThrow(() -> new PostNotFoundException(String.format("Пост № %d не найден", postId)));
+//    }
 }
