@@ -42,11 +42,4 @@ public class PostService {
         posts.add(post);
         return post;
     }
-
-//    public Post findPostById(Integer postId) {
-//        return posts.stream()
-//                .filter(p -> p.getId().equals(postId))
-//                .findFirst()
-//                .orElseThrow(() -> new PostNotFoundException(String.format("Пост № %d не найден", postId)));
-//    }
 }
