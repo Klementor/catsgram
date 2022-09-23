@@ -23,7 +23,6 @@ public class PostController {
             @RequestParam(value = "size", defaultValue = "10", required = false) Integer size,
             @RequestParam(value = "sort", defaultValue = "desc", required = false) String sort) {
 
-
         if(!(sort.equals("asc") || sort.equals("desc"))){
             throw new IllegalArgumentException();
         }
