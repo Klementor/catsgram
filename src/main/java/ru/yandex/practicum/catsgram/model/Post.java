@@ -10,8 +10,7 @@ public class Post {
     private String description; // описание
     private String photoUrl; // url-адрес фотографии
 
-    public Post(Integer id, String author, String description, String photoUrl) {
-        this.id = id;
+    public Post(String author, String description, String photoUrl) {
         this.author = author;
         this.description = description;
         this.photoUrl = photoUrl;

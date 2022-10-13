@@ -12,7 +12,6 @@ import java.util.Collection;
 public class UserController {
     private final UserService userService;
 
-    @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -31,8 +30,9 @@ public class UserController {
     public User updateUser(@RequestBody User user) {
         return userService.updateUser(user);
     }
+
     @GetMapping("/user/{userMail}")
-    public User findUserByEmail(@PathVariable("userMail") String userMail) {
+    public User getUser(@PathVariable("userMail") String userMail){
         return userService.findUserByEmail(userMail);
     }
 }
